@@ -1,3 +1,5 @@
+﻿# auth-practice-project
+`en este proyecto hare una practica de uso en ReactJs de las dependencias de yup, react-hook-form. react-router-dom, @hookform/resolvers, firebase, sweetalert2, bootstrap`
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
