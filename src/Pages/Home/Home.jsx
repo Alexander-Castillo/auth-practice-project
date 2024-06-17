@@ -1,9 +1,11 @@
 
+import '../../components/auth/css/LoginStyle.css'
+import 'firebase/firestore'
 
 export const Home =()=>{
     return(
-        <>
-        <h1 className="text-center text-success fw-uppercase">hola mundo</h1>
-        </>
+        <section className="vh-100 gradient-custom">
+            
+        </section>
     )
 }

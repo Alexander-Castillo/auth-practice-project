@@ -1,13 +1,14 @@
-import { Home } from "./Pages/Home/Home"
+import { Rutas } from "./components/Rutas/Rutas"
+
+
 
 
 
 function App() {
- 
 
   return (
     <>
-      <Home/>
+      <Rutas/>
     </>
   )
 }
