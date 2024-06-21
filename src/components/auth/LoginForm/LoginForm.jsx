@@ -6,10 +6,20 @@ import { useNavigate } from "react-router-dom";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import { onSubmitLoginForm } from "../../Events/onSubmitLoginForm";
+import { useAuthContext } from "../../Hooks/useAuthContext";
+import { useEffect } from "react";
 
 
 export const LoginForm = () => {
+    const { currentUser } = useAuthContext();
+
     const navegar = useNavigate();
+
+    useEffect(()=>{
+        if (currentUser) {
+            navegar('/home');
+        }
+    },[currentUser,navegar])
 
     const { register, handleSubmit, formState: { errors }, trigger } = useForm({
         resolver: yupResolver(schemaLoginForm)
