@@ -14,16 +14,24 @@ export const Rutas = () => {
         <>
             {/** envuelve la aplicacion proporcionando contexto de auntentificacion */}
             <AuthProvider>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Navigate to='/login' />} />
-                        <Route path='/login' element={<Login />} />
-                        <Route path="/registro" element={<Registro />} />
-                        <Route path="/home" element={<ProtectedRoute><Layout><Home /></Layout></ProtectedRoute>} />
-                        <Route path="/chat" element={<ProtectedRoute><Layout><Chat/></Layout></ProtectedRoute>} />
-                    </Routes>
-                </BrowserRouter>
-            </AuthProvider>
+            <BrowserRouter>
+                <Routes>
+                    {/* Redirige a /login como ruta por defecto */}
+                    <Route path="/" element={<Navigate to='/login' />} />
+
+                    {/* Rutas públicas */}
+                    <Route path='/login' element={<Login />} />
+                    <Route path="/registro" element={<Registro />} />
+
+                    {/* Rutas protegidas */}
+                    <Route path="/home" element={<ProtectedRoute><Layout><Home /></Layout></ProtectedRoute>} />
+                    <Route path="/chat" element={<ProtectedRoute><Layout><Chat/></Layout></ProtectedRoute>} />
+
+                    {/* Maneja rutas no existentes */}
+                    <Route path="*" element={<Navigate to="/login" />} />
+                </Routes>
+            </BrowserRouter>
+        </AuthProvider>
         </>
     )
 }
